@@ -1,5 +1,6 @@
 import { IsNotEmpty } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
+import { Tema } from "../../temas/entities/tema.entity";
 
 @Entity({ name: "tb_postagens" })   // Indicando que a classe é uma Entitidade/Model
 export class Postagem {
@@ -17,5 +18,10 @@ export class Postagem {
 
     @UpdateDateColumn() // Indica que o campo será gerenciado pelo BD
     data: Date;
+
+    @ManyToOne(() => Tema, (tema) => tema.postagem, {
+        onDelete: "CASCADE"
+    })
+    tema: Tema
 
 }

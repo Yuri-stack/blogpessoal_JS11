@@ -6,6 +6,7 @@ import { DeleteResult } from "typeorm";
 @Controller("/postagens")   // Indica que a Classe é uma Controller
 export class PostagemController {
 
+    // Dentro do Construtor injetamos o postagemService para podermos usar seus métodos
     constructor(private readonly postagemService: PostagemService) { }
 
     @Get()// Indica que esse método lida com Requisições do Tipo GET
