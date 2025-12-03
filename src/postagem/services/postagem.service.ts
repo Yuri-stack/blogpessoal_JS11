@@ -16,7 +16,7 @@ import { TemaService } from "../../temas/services/tema.service";
 @Injectable()
 export class PostagemService {
 
-    // Inicia alguns recursos(Repository) para a classe de Serviço funcionar
+    // Inicia alguns recursos(Repository, Services) para a classe de Serviço funcionar
     constructor(
         @InjectRepository(Postagem) // Aplica a inversão de dependência a nossa classe Repository
         private postagemRepository: Repository<Postagem>,    // Criamos um Objeto da classe Repository voltado para Postagens
