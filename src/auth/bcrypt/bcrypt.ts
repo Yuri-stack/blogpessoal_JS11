@@ -11,8 +11,8 @@ export class Bcrypt {
     }
 
     // Função responsavel por comparar a senha criptografa e salva no banco com a sem enviada no login
-    async compararSenhas(senhaDigitada: string, senhaBanco: string): Promise<boolean> {
-        return await bcrypt.compare(senhaDigitada, senhaBanco);
+    async compararSenhas(senhaBanco: string, senhaDigitada: string): Promise<boolean> {
+        return bcrypt.compareSync(senhaDigitada, senhaBanco);
     }
 
 }
